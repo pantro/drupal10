@@ -8,6 +8,7 @@ services:
   appserver:
     build:
       - composer install
+      - cd web/sites/default && ln -s .lando.settings.php settings.local.php
     overrides:
       environment:
         DRUSH_OPTIONS_URI: "https://mydrupal.lndo.site"
